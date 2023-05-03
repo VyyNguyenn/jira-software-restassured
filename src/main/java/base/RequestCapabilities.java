@@ -1,12 +1,7 @@
 package base;
 
 import io.restassured.http.Header;
-import io.restassured.http.Headers;
-import io.restassured.specification.RequestSpecification;
-
 import java.util.Base64;
-
-import static io.restassured.RestAssured.*;
 
 public interface RequestCapabilities {
     static String email = System.getenv("email");
