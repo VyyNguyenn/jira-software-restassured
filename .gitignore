@@ -1,2 +1,4 @@
 # Project exclude paths
 /target/
+/src/test/java/vynguyen/jira/api/GetJiraProjectDraft.java
+/src/test/java/vynguyen/jira/testcases/Draft.java
