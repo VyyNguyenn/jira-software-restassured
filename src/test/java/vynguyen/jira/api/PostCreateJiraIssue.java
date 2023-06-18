@@ -1,26 +1,24 @@
 package vynguyen.jira.api;
 
 import builder.CreateIssueJsonDataBuilder;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.lang3.RandomStringUtils;
-import utilities.RequestCapabilities;
+import utilities.BaseTest;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
-public class PostCreateJiraIssue extends RequestCapabilities {
+public class PostCreateJiraIssue extends BaseTest {
 
-    public Response createIssue(String projectID, String issueTypeID, String summary){
+    public Response createIssue(String projectID, String issueTypeID, String summary, Header...header){
         RequestSpecification request = given();
         request.baseUri("https://vynguyen-restassured.atlassian.net");
         request.basePath("/rest/api/3/issue");
 
         String body = CreateIssueJsonDataBuilder.build(projectID, issueTypeID, summary);
 
-        Response response = request.log().body()
-                                .header(contentTypeHeader)
-                                .header(acceptHeader)
-                                .header(authorizationHeader)
+        Response response = request.log().all()
+                                .headers(setHeaders())
                                 .body(body)
                             .when()
                                  .post();
@@ -28,23 +26,4 @@ public class PostCreateJiraIssue extends RequestCapabilities {
         return response;
     }
 
-    public Response logCheck(){
-        RequestSpecification request = given();
-        request.baseUri("https://vynguyen-restassured.atlassian.net");
-        request.basePath("/rest/api/3/issue");
-
-        String randomSummary = RandomStringUtils.random(20, true, true);
-
-        String body = CreateIssueJsonDataBuilder.build("10002","10013", randomSummary);
-
-        Response response = request.log().body()
-                                .header(contentTypeHeader)
-                                .header(acceptHeader)
-                                .header(authorizationHeader)
-                                .body(body)
-                            .when()
-                                .post();
-
-        return response;
-    }
 }

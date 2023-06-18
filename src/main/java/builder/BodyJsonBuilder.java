@@ -7,6 +7,4 @@ public class BodyJsonBuilder {
     public static <T> String getJsonData(T dataObject){
         return new Gson().toJson(dataObject);
     }
-
-
 }
