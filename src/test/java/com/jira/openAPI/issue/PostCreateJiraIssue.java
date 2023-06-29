@@ -1,6 +1,6 @@
-package vynguyen.jira.api;
+package com.jira.openAPI.issue;
 
-import builder.CreateIssueJsonDataBuilder;
+import builder.CreateIssueJsonBodyBuilder;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -15,10 +15,10 @@ public class PostCreateJiraIssue extends BaseTest {
         request.baseUri("https://vynguyen-restassured.atlassian.net");
         request.basePath("/rest/api/3/issue");
 
-        String body = CreateIssueJsonDataBuilder.build(projectID, issueTypeID, summary);
+        String body = CreateIssueJsonBodyBuilder.build(projectID, issueTypeID, summary);
 
         Response response = request.log().all()
-                                .headers(setHeaders())
+                                .headers(setHeaders(header))
                                 .body(body)
                             .when()
                                  .post();

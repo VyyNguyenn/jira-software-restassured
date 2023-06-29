@@ -1,14 +1,12 @@
-package vynguyen.jira.api;
+package com.jira.openAPI.issue;
 
-import builder.CreateIssueJsonDataBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.lang3.RandomStringUtils;
 import utilities.RequestCapabilities;
 
 import static io.restassured.RestAssured.given;
 
-public class GetJiraIssueInfo extends RequestCapabilities {
+public class GetJiraIssueInfo implements RequestCapabilities {
 
     public Response getIssue(String issueKey){
         RequestSpecification request = given();

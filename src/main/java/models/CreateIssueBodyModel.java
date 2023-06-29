@@ -3,7 +3,7 @@ package models;
 import lombok.Data;
 
 @Data
-public class CreateIssueBody {
+public class CreateIssueBodyModel {
     private Fields fields;
 
     @Data
@@ -14,12 +14,12 @@ public class CreateIssueBody {
 
         @Data
         public static class IssueType {
-            private String issueID;
+            private String id;
         }
 
         @Data
         public static class Project {
-            private String projectID;
+            private String id;
         }
     }
 }
