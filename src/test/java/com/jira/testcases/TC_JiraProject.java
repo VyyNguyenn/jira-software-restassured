@@ -1,6 +1,6 @@
 package com.jira.testcases;
 
-import com.jira.action.ProjectService;
+import com.jira.serviceObjects.ProjectService;
 import com.jira.openAPI.project.GetJiraProject;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
