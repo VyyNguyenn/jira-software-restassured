@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite thread-count="1" verbose="1" name="My Suite" parallel="tests">
+    <test name="Run test class">
+        <classes>
+            <class name="com.jira.testcases.TC_JiraProject"/>
+            <class name="com.jira.testcases.TC_JiraIssue"/>
+        </classes>
+    </test>
+</suite>

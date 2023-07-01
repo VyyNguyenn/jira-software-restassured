@@ -8,14 +8,15 @@ import utilities.RequestCapabilities;
 
 public class TC_JiraProject {
 
-    @Test
+
+    @Test(groups = {"regression"})
     public void TC_01_Check_Authorization(){
         Response response = ProjectService.getProject(RequestCapabilities.contentTypeHeader,RequestCapabilities.acceptHeader);
         System.out.println(response.statusCode());
         response.prettyPrint();
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void TC_02_Successfully(){
         Response response = ProjectService.getProject(RequestCapabilities.contentTypeHeader,RequestCapabilities.acceptHeader, RequestCapabilities.authorizationHeader);
         System.out.println(response.statusCode());

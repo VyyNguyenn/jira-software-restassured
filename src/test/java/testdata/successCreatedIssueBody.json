@@ -1,9 +1,5 @@
 [
   {
-  "type": "epic",
-  "summary": "summary 2"
-  },
-  {
     "type": "task",
     "summary": "summary 3"
   }
