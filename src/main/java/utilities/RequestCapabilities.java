@@ -5,7 +5,7 @@ import java.util.Base64;
 
 public interface RequestCapabilities {
     String email = System.getenv("email");
-    String token = "ATATT3xFfGF0Bljd6NmGJtUzjyOetW4BAgySnezvcJpxJJr9bt4uxULUitWE_kaCoFsIQ74ETaphaiX9cBPt4kiAC6BGpYE_BCdLCn1TrtAzmquZ2kg0fypyw38Tgpv8k_lTeEpVTbJ_LkiSp2teAg4BDr6GZV38euc-kYhdLfrcxeqEGitWsnA=3DAA6414";
+    String token = "ATATT3xFfGF0jb-u9Wd73mm43ql1_ktzYgz71WkgdJhd955cY51Wlgtp-8nr4gCc1ajYV-jW3OimNv2b51J619eVKckIpNXOSDTovuQe9VTe_39lLOvkzuP32uxQAdarbPTaj7JvgUixaKZ32e-57Kfi5LC9yS_YtQm-aREPFq1iZfZFwWX9pgM=A95CDC7C";
     String cred = email.concat(":").concat(token);
     String encodedCred = Base64.getEncoder().encodeToString(cred.getBytes());
 

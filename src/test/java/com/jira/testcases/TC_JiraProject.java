@@ -17,8 +17,7 @@ public class TC_JiraProject {
 
     @Test
     public void TC_02_Successfully(){
-        GetJiraProject request = new GetJiraProject();
-        Response response = request.getProjectInfo(RequestCapabilities.contentTypeHeader,RequestCapabilities.acceptHeader, RequestCapabilities.authorizationHeader);
+        Response response = ProjectService.getProject(RequestCapabilities.contentTypeHeader,RequestCapabilities.acceptHeader, RequestCapabilities.authorizationHeader);
         System.out.println(response.statusCode());
         response.prettyPrint();
     }
