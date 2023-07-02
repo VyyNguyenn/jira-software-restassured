@@ -8,3 +8,6 @@
 
 ###Run test
 1. The tests can be found at src/test/java/com/testcases
+2. To run test suite from terminal, use below command line
+   `mvn clean test -DxmlSuite={suitepath}
+   i.e `mvn clean test -DxmlSuite=src/test/java/testrunner/runTest.xml`
