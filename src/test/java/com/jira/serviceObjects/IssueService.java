@@ -6,8 +6,8 @@ import io.qameta.allure.Step;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 
-import static utilities.RequestCapabilities.*;
-import static utilities.RequestCapabilities.authorizationHeader;
+import static utilities.RequestConstants.PROJECT_ID;
+import static utilities.RequestConstants.authorizationHeader;
 
 public class IssueService {
 

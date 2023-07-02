@@ -4,7 +4,7 @@ import com.jira.openAPI.project.GetJiraProject;
 import io.qameta.allure.Step;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import utilities.RequestCapabilities;
+import utilities.RequestConstants;
 
 import java.util.List;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class ProjectService {
     @Step("Get issue list")
     public static void getIssueTypeList(){
         GetJiraProject projectInfo = new GetJiraProject();
-        Response response = projectInfo.getProjectInfo(RequestCapabilities.authorizationHeader);
+        Response response = projectInfo.getProjectInfo(RequestConstants.authorizationHeader);
         issueTypes = response.then().extract().path("issueTypes");
     }
 

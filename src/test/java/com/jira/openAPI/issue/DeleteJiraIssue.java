@@ -2,19 +2,18 @@ package com.jira.openAPI.issue;
 
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import utilities.BaseTest;
+import utilities.RequestConstants;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.basePath;
+import static io.restassured.RestAssured.given;
 
 public class DeleteJiraIssue extends BaseTest {
 
     public Response deleteJiraIssue (String issueKey, Header...header){
-        RequestSpecification request = given();
-        request.baseUri("https://vynguyen-restassured.atlassian.net");
-        request.basePath("/rest/api/3/issue/");
+        basePath = RequestConstants.PATH_ISSUE;
 
-        Response response = request.log().all()
+        Response response = given().log().all()
                                 .headers(setHeaders(header))
                             .when()
                                 .delete(issueKey);

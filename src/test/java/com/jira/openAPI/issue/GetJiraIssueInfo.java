@@ -1,22 +1,20 @@
 package com.jira.openAPI.issue;
 
+import io.restassured.http.Header;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import utilities.RequestCapabilities;
+import utilities.BaseTest;
+import utilities.RequestConstants;
 
+import static io.restassured.RestAssured.basePath;
 import static io.restassured.RestAssured.given;
 
-public class GetJiraIssueInfo implements RequestCapabilities {
+public class GetJiraIssueInfo extends BaseTest {
 
-    public Response getIssue(String issueKey){
-        RequestSpecification request = given();
-        request.baseUri("https://vynguyen-restassured.atlassian.net");
-        request.basePath("/rest/api/3/issue");
+    public Response getIssue(String issueKey, Header...header){
+        basePath = RequestConstants.PATH_ISSUE;
 
-        Response response = request
-                                .header(contentTypeHeader)
-                                .header(acceptHeader)
-                                .header(authorizationHeader)
+        Response response = given()
+                                .headers(setHeaders(header))
                             .when()
                                  .get(issueKey);
 

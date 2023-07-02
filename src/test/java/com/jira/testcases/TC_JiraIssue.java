@@ -4,14 +4,10 @@ import com.jira.serviceObjects.IssueService;
 import com.jira.serviceObjects.ProjectService;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilities.provider.RequestBodyData;
 
-import java.util.Properties;
-
-import static utilities.RequestCapabilities.*;
+import static utilities.RequestConstants.*;
 
 public class TC_JiraIssue {
     String issueTypeID;
