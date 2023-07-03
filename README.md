@@ -11,3 +11,6 @@
 2. To run test suite from terminal, use below command line
    `mvn clean test -DxmlSuite={suitepath}
    i.e `mvn clean test -DxmlSuite=src/test/java/testrunner/runTest.xml`
+
+###Generate report
+1. To generate Allure report, run below command `allure generate allure-results --clean -output allure-report`
